@@ -1,0 +1,354 @@
+SF:C:\Metin\trendyol-case-study\src\TCS.Domain\Campaign.cs
+FN:4,System.Int32 TCS.Domain.Campaign::get_MinimumItemCount()
+FNDA:7,System.Int32 TCS.Domain.Campaign::get_MinimumItemCount()
+DA:5,7
+FN:5,TCS.Domain.Category TCS.Domain.Campaign::get_Category()
+FNDA:7,TCS.Domain.Category TCS.Domain.Campaign::get_Category()
+DA:6,7
+FN:8,System.Void TCS.Domain.Campaign::.ctor(TCS.Domain.Category,System.Double,TCS.Domain.DiscountType,System.Int32)
+FNDA:4,System.Void TCS.Domain.Campaign::.ctor(TCS.Domain.Category,System.Double,TCS.Domain.DiscountType,System.Int32)
+DA:9,4
+DA:10,4
+DA:11,4
+DA:12,4
+DA:13,4
+LF:7
+LH:7
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:C:\Metin\trendyol-case-study\src\TCS.Domain\Category.cs
+FN:6,System.String TCS.Domain.Category::get_Title()
+FNDA:16,System.String TCS.Domain.Category::get_Title()
+DA:7,16
+FN:7,TCS.Domain.Category TCS.Domain.Category::get_Parent()
+FNDA:18,TCS.Domain.Category TCS.Domain.Category::get_Parent()
+DA:8,18
+FN:15,System.Void TCS.Domain.Category::AssignParent(TCS.Domain.Category)
+FNDA:3,System.Void TCS.Domain.Category::AssignParent(TCS.Domain.Category)
+DA:16,3
+DA:17,3
+DA:18,1
+DA:19,1
+DA:21,2
+DA:22,1
+DA:23,1
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+BRDA:17,7,0,1
+BRDA:17,7,1,2
+BRDA:21,30,0,1
+BRDA:21,30,1,1
+FN:9,System.Void TCS.Domain.Category::.ctor(System.String)
+FNDA:16,System.Void TCS.Domain.Category::.ctor(System.String)
+DA:10,16
+DA:11,16
+DA:12,16
+DA:13,16
+LF:17
+LH:17
+BRF:4
+BRH:4
+FNF:4
+FNH:4
+end_of_record
+SF:C:\Metin\trendyol-case-study\src\TCS.Domain\Coupon.cs
+FN:4,System.Double TCS.Domain.Coupon::get_MinimumAmount()
+FNDA:7,System.Double TCS.Domain.Coupon::get_MinimumAmount()
+DA:5,7
+FN:6,System.Void TCS.Domain.Coupon::.ctor(System.Double,System.Double,TCS.Domain.DiscountType)
+FNDA:4,System.Void TCS.Domain.Coupon::.ctor(System.Double,System.Double,TCS.Domain.DiscountType)
+DA:7,4
+DA:8,4
+DA:9,4
+DA:10,4
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:C:\Metin\trendyol-case-study\src\TCS.Domain\DeliveryCostCalculator.cs
+FN:6,System.Double TCS.Domain.DeliveryCostCalculator::get_CostPerDelivery()
+FNDA:8,System.Double TCS.Domain.DeliveryCostCalculator::get_CostPerDelivery()
+DA:7,8
+FN:7,System.Double TCS.Domain.DeliveryCostCalculator::get_CostPerProduct()
+FNDA:8,System.Double TCS.Domain.DeliveryCostCalculator::get_CostPerProduct()
+DA:8,8
+FN:8,System.Double TCS.Domain.DeliveryCostCalculator::get_FixedCost()
+FNDA:8,System.Double TCS.Domain.DeliveryCostCalculator::get_FixedCost()
+DA:9,8
+FN:23,System.Double TCS.Domain.DeliveryCostCalculator::CalculateFor(TCS.Domain.IShoppingCart)
+FNDA:6,System.Double TCS.Domain.DeliveryCostCalculator::CalculateFor(TCS.Domain.IShoppingCart)
+DA:24,6
+DA:25,6
+DA:26,1
+DA:27,1
+DA:30,5
+DA:31,5
+DA:33,5
+DA:34,3
+DA:35,3
+DA:38,2
+DA:39,5
+BRDA:25,7,0,1
+BRDA:25,7,1,5
+BRDA:33,36,0,3
+BRDA:33,36,1,2
+BRDA:33,47,0,3
+BRDA:33,47,1,2
+FN:10,System.Void TCS.Domain.DeliveryCostCalculator::.ctor(System.Double,System.Double,System.Double)
+FNDA:7,System.Void TCS.Domain.DeliveryCostCalculator::.ctor(System.Double,System.Double,System.Double)
+DA:11,7
+DA:12,7
+DA:13,7
+DA:14,1
+DA:15,1
+DA:18,6
+DA:19,6
+DA:20,6
+DA:21,6
+BRDA:13,18,0,6
+BRDA:13,30,0,6
+BRDA:13,18,1,1
+BRDA:13,30,1,1
+BRDA:13,49,0,1
+BRDA:13,49,1,6
+LF:23
+LH:23
+BRF:12
+BRH:12
+FNF:5
+FNH:5
+end_of_record
+SF:C:\Metin\trendyol-case-study\src\TCS.Domain\Discount.cs
+FN:4,System.Double TCS.Domain.Discount::get_DiscountValue()
+FNDA:12,System.Double TCS.Domain.Discount::get_DiscountValue()
+DA:5,12
+FN:5,TCS.Domain.DiscountType TCS.Domain.Discount::get_DiscountType()
+FNDA:14,TCS.Domain.DiscountType TCS.Domain.Discount::get_DiscountType()
+DA:6,14
+FN:7,System.Void TCS.Domain.Discount::.ctor(System.Double,TCS.Domain.DiscountType)
+FNDA:8,System.Void TCS.Domain.Discount::.ctor(System.Double,TCS.Domain.DiscountType)
+DA:8,8
+DA:9,8
+DA:10,8
+DA:11,8
+DA:12,8
+LF:7
+LH:7
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:C:\Metin\trendyol-case-study\src\TCS.Domain\Product.cs
+FN:4,System.String TCS.Domain.Product::get_Title()
+FNDA:11,System.String TCS.Domain.Product::get_Title()
+DA:5,11
+FN:5,System.Double TCS.Domain.Product::get_Price()
+FNDA:18,System.Double TCS.Domain.Product::get_Price()
+DA:6,18
+FN:6,TCS.Domain.Category TCS.Domain.Product::get_Category()
+FNDA:14,TCS.Domain.Category TCS.Domain.Product::get_Category()
+DA:7,14
+FN:8,System.Void TCS.Domain.Product::.ctor(System.String,System.Double,TCS.Domain.Category)
+FNDA:11,System.Void TCS.Domain.Product::.ctor(System.String,System.Double,TCS.Domain.Category)
+DA:9,11
+DA:10,11
+DA:11,11
+DA:12,11
+DA:13,11
+DA:14,11
+LF:9
+LH:9
+BRF:0
+BRH:0
+FNF:4
+FNH:4
+end_of_record
+SF:C:\Metin\trendyol-case-study\src\TCS.Domain\ShoppingCart.cs
+FN:17,System.Double TCS.Domain.ShoppingCart::get_TotalAmount()
+FNDA:10,System.Double TCS.Domain.ShoppingCart::get_TotalAmount()
+DA:18,10
+BRDA:18,12,0,1
+BRDA:18,12,1,5
+FN:18,System.Int32 TCS.Domain.ShoppingCart::get_NumberOfProducts()
+FNDA:2,System.Int32 TCS.Domain.ShoppingCart::get_NumberOfProducts()
+DA:19,2
+BRDA:19,12,0,1
+BRDA:19,12,1,1
+FN:19,System.Int32 TCS.Domain.ShoppingCart::get_NumberOfCategories()
+FNDA:0,System.Int32 TCS.Domain.ShoppingCart::get_NumberOfCategories()
+DA:20,0
+BRDA:20,12,0,0
+BRDA:20,12,1,0
+FN:34,System.Void TCS.Domain.ShoppingCart::AddItem(TCS.Domain.Product,System.Int32)
+FNDA:13,System.Void TCS.Domain.ShoppingCart::AddItem(TCS.Domain.Product,System.Int32)
+DA:35,13
+DA:36,13
+DA:37,1
+DA:38,1
+DA:40,12
+DA:41,1
+DA:42,1
+DA:45,11
+DA:46,11
+DA:47,1
+DA:48,1
+DA:49,1
+DA:51,10
+DA:52,10
+DA:53,10
+DA:54,11
+BRDA:36,7,0,1
+BRDA:36,7,1,12
+BRDA:40,27,0,1
+BRDA:40,27,1,11
+BRDA:46,61,0,1
+BRDA:46,61,1,10
+FN:56,System.Void TCS.Domain.ShoppingCart::ApplyDiscounts(TCS.Domain.Campaign[])
+FNDA:4,System.Void TCS.Domain.ShoppingCart::ApplyDiscounts(TCS.Domain.Campaign[])
+DA:57,4
+DA:58,4
+DA:59,4
+FN:61,System.Void TCS.Domain.ShoppingCart::ApplyCoupon(TCS.Domain.Coupon)
+FNDA:4,System.Void TCS.Domain.ShoppingCart::ApplyCoupon(TCS.Domain.Coupon)
+DA:62,4
+DA:63,4
+DA:64,4
+FN:66,System.Double TCS.Domain.ShoppingCart::GetTotalAmountAfterDiscounts()
+FNDA:0,System.Double TCS.Domain.ShoppingCart::GetTotalAmountAfterDiscounts()
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+FN:74,System.Double TCS.Domain.ShoppingCart::GetCouponDiscount()
+FNDA:4,System.Double TCS.Domain.ShoppingCart::GetCouponDiscount()
+DA:75,4
+DA:76,4
+DA:77,4
+FN:79,System.Double TCS.Domain.ShoppingCart::GetCampaignDiscount()
+FNDA:4,System.Double TCS.Domain.ShoppingCart::GetCampaignDiscount()
+DA:80,4
+DA:81,4
+DA:82,18
+DA:83,3
+DA:84,3
+DA:85,6
+DA:86,3
+DA:87,2
+DA:88,2
+DA:89,1
+DA:90,1
+DA:91,1
+DA:92,1
+DA:93,1
+DA:94,2
+DA:95,1
+DA:96,2
+DA:97,3
+DA:98,4
+DA:99,4
+BRDA:82,221,1,3
+BRDA:85,74,0,1
+BRDA:85,74,1,3
+BRDA:86,128,0,2
+BRDA:88,149,0,1
+BRDA:88,149,1,1
+BRDA:92,189,0,1
+BRDA:92,189,1,2
+BRDA:86,128,1,3
+BRDA:82,221,0,4
+FN:101,System.Double TCS.Domain.ShoppingCart::GetDeliveryCost()
+FNDA:0,System.Double TCS.Domain.ShoppingCart::GetDeliveryCost()
+DA:102,0
+DA:103,0
+DA:104,0
+FN:106,System.String TCS.Domain.ShoppingCart::Print()
+FNDA:0,System.String TCS.Domain.ShoppingCart::Print()
+DA:107,0
+DA:108,0
+DA:109,0
+FN:113,System.Collections.Generic.Dictionary`2<TCS.Domain.Product,System.Int32> TCS.Domain.ShoppingCart::GetProductsByCategory(TCS.Domain.Category)
+FNDA:3,System.Collections.Generic.Dictionary`2<TCS.Domain.Product,System.Int32> TCS.Domain.ShoppingCart::GetProductsByCategory(TCS.Domain.Category)
+DA:114,3
+DA:115,6
+DA:116,9
+DA:117,3
+BRDA:115,50,0,1
+BRDA:115,50,1,6
+BRDA:115,81,0,1
+BRDA:115,81,1,3
+FN:119,System.Double TCS.Domain.ShoppingCart::GetCouponDiscount(System.Double)
+FNDA:4,System.Double TCS.Domain.ShoppingCart::GetCouponDiscount(System.Double)
+DA:120,4
+DA:121,4
+DA:122,4
+DA:123,3
+DA:124,3
+DA:125,2
+DA:126,2
+DA:127,1
+DA:128,1
+DA:129,1
+DA:130,1
+DA:131,1
+DA:132,1
+DA:133,1
+DA:134,2
+DA:135,3
+DA:136,4
+DA:137,4
+BRDA:122,22,0,3
+BRDA:124,44,0,2
+BRDA:126,63,0,1
+BRDA:126,63,1,1
+BRDA:130,99,0,1
+BRDA:130,99,1,2
+BRDA:124,44,1,3
+BRDA:122,22,1,4
+FN:139,System.Boolean TCS.Domain.ShoppingCart::IsSubCategory(TCS.Domain.Category,TCS.Domain.Category)
+FNDA:0,System.Boolean TCS.Domain.ShoppingCart::IsSubCategory(TCS.Domain.Category,TCS.Domain.Category)
+DA:140,0
+DA:141,0
+DA:142,0
+DA:143,0
+DA:144,0
+DA:145,0
+DA:146,0
+DA:148,0
+DA:149,0
+DA:150,0
+DA:151,0
+BRDA:142,38,1,0
+BRDA:144,17,0,0
+BRDA:144,17,1,0
+BRDA:142,38,0,0
+FN:21,System.Void TCS.Domain.ShoppingCart::.ctor(TCS.Domain.IDeliveryCostCalculator)
+FNDA:15,System.Void TCS.Domain.ShoppingCart::.ctor(TCS.Domain.IDeliveryCostCalculator)
+DA:22,15
+DA:23,15
+DA:24,15
+DA:25,15
+DA:27,15
+DA:28,1
+DA:29,1
+DA:31,14
+DA:32,14
+BRDA:27,36,0,1
+BRDA:27,36,1,14
+LF:102
+LH:78
+BRF:40
+BRH:34
+FNF:15
+FNH:10
+end_of_record
