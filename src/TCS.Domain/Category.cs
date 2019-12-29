@@ -27,5 +27,19 @@ namespace TCS.Domain
                 Parent = parentCategory;
             }
         }
+
+        public bool IsParentOf(Category subCategory)
+        {
+            Category temp = subCategory.Parent;
+            while (temp != null)
+            {
+                if (temp == this)
+                {
+                    return true;
+                }
+                temp = temp.Parent;
+            }
+            return false;
+        }
     }
 }

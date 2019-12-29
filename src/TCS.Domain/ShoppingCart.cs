@@ -76,6 +76,26 @@ namespace TCS.Domain
             return GetCouponDiscount(TotalAmount);
         }
 
+        private double GetCouponDiscount(double totalAmount)
+        {
+            double discountAmount = 0;
+            if (_coupon != null)
+            {
+                if (totalAmount >= _coupon.MinimumAmount)
+                {
+                    if (_coupon.DiscountType == DiscountType.Amount)
+                    {
+                        discountAmount = _coupon.DiscountValue;
+                    }
+                    else if (_coupon.DiscountType == DiscountType.Rate)
+                    {
+                        discountAmount = totalAmount * (_coupon.DiscountValue / 100);
+                    }
+                }
+            }
+            return discountAmount;
+        }
+
         public double GetCampaignDiscount()
         {
             double discountAmount = 0;
@@ -112,42 +132,8 @@ namespace TCS.Domain
 
         private Dictionary<Product, int> GetProductsByCategory(Category category)
         {
-            return _shoppingCartItems.Where(sci => sci.Key.Category == category || IsSubCategory(category, sci.Key.Category))
+            return _shoppingCartItems.Where(sci => sci.Key.Category == category || category.IsParentOf(sci.Key.Category))
                 .ToDictionary(sci => sci.Key, sci => sci.Value);
-        }
-
-        private double GetCouponDiscount(double totalAmount)
-        {
-            double discountAmount = 0;
-            if (_coupon != null)
-            {
-                if (totalAmount >= _coupon.MinimumAmount)
-                {
-                    if (_coupon.DiscountType == DiscountType.Amount)
-                    {
-                        discountAmount = _coupon.DiscountValue;
-                    }
-                    else if (_coupon.DiscountType == DiscountType.Rate)
-                    {
-                        discountAmount = totalAmount * (_coupon.DiscountValue / 100);
-                    }
-                }
-            }
-            return discountAmount;
-        }
-
-        private bool IsSubCategory(Category parent, Category sub)
-        {
-            Category temp = sub.Parent;
-            while (temp != null)
-            {
-                if (temp == parent)
-                {
-                    return true;
-                }
-                temp = temp.Parent;
-            }
-            return false;
         }
 
         #endregion Helper Functions
