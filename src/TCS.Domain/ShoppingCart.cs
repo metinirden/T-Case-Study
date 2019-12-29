@@ -6,7 +6,10 @@ namespace TCS.Domain
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using System.Text;
+    using ConsoleTables;
 
     public class ShoppingCart : IShoppingCart
     {
@@ -123,9 +126,25 @@ namespace TCS.Domain
             return _deliveryCostCalculator.CalculateFor(this);
         }
 
+        [ExcludeFromCodeCoverage]
         public string Print()
         {
-            return $"{TotalAmount} {_deliveryCostCalculator.CalculateFor(this)}";
+            var grouppedProducts = _shoppingCartItems.GroupBy(p => p.Key.Category.Title).ToDictionary(e => e.Key, e => e);
+            ConsoleTable table = new ConsoleTable("Category", "Product", "Quantity", "Unit Price", "Total Price");
+            foreach (var group in grouppedProducts)
+            {
+                foreach (var sci in group.Value)
+                {
+                    table.AddRow(group.Key, sci.Key.Title, sci.Value, sci.Key.Price, sci.Key.Price * sci.Value);
+                }
+            }
+            string prettyPrint = table.ToMinimalString();
+            prettyPrint += $"\nTotal Amount: {TotalAmount}" +
+                $"\nTotal Amount After Discounts: {GetTotalAmountAfterDiscounts()}" +
+                $"\nTotal Discount: {TotalAmount - GetTotalAmountAfterDiscounts()}" +
+                $"\nDelivery Cost: {GetDeliveryCost()}";
+
+            return prettyPrint;
         }
 
         #region Helper Functions

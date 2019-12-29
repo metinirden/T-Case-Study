@@ -1,4 +1,5 @@
-﻿using TCS.Domain;
+﻿using System;
+using TCS.Domain;
 
 namespace TCS.App
 {
@@ -6,28 +7,28 @@ namespace TCS.App
     {
         private static void Main(string[] args)
         {
-            Category fruit = new Category("Fruit");
-            Category shoe = new Category("Shoe");
-            Category menShoe = new Category("Men Shoe");
-            menShoe.AssignParent(shoe);
+            Category furnitureCat = new Category("Furniture");
+            Category deskCat = new Category("Desk");
+            Category smartPhoneCat = new Category("smartPhone");
+            deskCat.AssignParent(furnitureCat);
 
-            Product apple = new Product("Apple", 100, fruit);
-            Product orange = new Product("Orange", 50, fruit);
-            Product sportShoe = new Product("Sport Shoe", 250, menShoe);
+            Product cabinet = new Product("Dolap", 450, furnitureCat);
+            Product pcDesk = new Product("Bilgisayar Masası", 350, deskCat);
+            Product samsungS8 = new Product("Samsung S8", 1250, smartPhoneCat);
 
-            ShoppingCart cart = new ShoppingCart(new DeliveryCostCalculator(1.5, 10, 2.99));
-            cart.AddItem(apple, 10);
-            cart.AddItem(orange, 5);
-            cart.AddItem(sportShoe, 1);
+            ShoppingCart cart = new ShoppingCart(new DeliveryCostCalculator(5, 15, 2.99));
+            cart.AddItem(cabinet, 2);
+            cart.AddItem(pcDesk, 3);
+            cart.AddItem(samsungS8, 1);
 
-            Campaign c1 = new Campaign(fruit, 10, DiscountType.Rate, 5);
-            Campaign c2 = new Campaign(menShoe, 30, DiscountType.Rate, 150);
-            cart.ApplyDiscounts(c1, c2);
+            Coupon coupon = new Coupon(2500, 100, DiscountType.Amount);
+            Campaign furnitureCampaign = new Campaign(furnitureCat, 10, DiscountType.Rate, 5);
+            Campaign smartPhoneCampaign = new Campaign(smartPhoneCat, 30, DiscountType.Rate, 2);
 
-            Coupon coupon = new Coupon(1, 10, DiscountType.Amount);
             cart.ApplyCoupon(coupon);
+            cart.ApplyDiscounts(furnitureCampaign, smartPhoneCampaign);
 
-            System.Console.WriteLine(cart.Print());
+            Console.WriteLine(cart.Print());
         }
     }
 }
