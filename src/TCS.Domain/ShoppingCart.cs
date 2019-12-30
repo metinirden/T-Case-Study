@@ -19,7 +19,7 @@ namespace TCS.Domain
         private readonly IDeliveryCostCalculator _deliveryCostCalculator;
 
         public double TotalAmount => _shoppingCartItems.Sum(sci => sci.Key.Price * sci.Value);
-        public int NumberOfProducts => _shoppingCartItems.Sum(sci => sci.Value);
+        public int NumberOfProducts => _shoppingCartItems.Count;
         public int NumberOfCategories => _shoppingCartItems.GroupBy(sci => sci.Key.Category.Title).Count();
 
         public ShoppingCart(IDeliveryCostCalculator deliveryCostCalculator)
@@ -81,22 +81,21 @@ namespace TCS.Domain
 
         private double GetCouponDiscount(double totalAmount)
         {
-            double discountAmount = 0;
             if (_coupon != null)
             {
                 if (totalAmount >= _coupon.MinimumAmount)
                 {
                     if (_coupon.DiscountType == DiscountType.Amount)
                     {
-                        discountAmount = _coupon.DiscountValue;
+                        return _coupon.DiscountValue;
                     }
                     else if (_coupon.DiscountType == DiscountType.Rate)
                     {
-                        discountAmount = totalAmount * (_coupon.DiscountValue / 100);
+                        return totalAmount * (_coupon.DiscountValue / 100);
                     }
                 }
             }
-            return discountAmount;
+            return 0;
         }
 
         public double GetCampaignDiscount()

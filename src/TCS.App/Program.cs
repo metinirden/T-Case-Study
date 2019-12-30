@@ -9,7 +9,7 @@ namespace TCS.App
         {
             Category furnitureCat = new Category("Furniture");
             Category deskCat = new Category("Desk");
-            Category smartPhoneCat = new Category("smartPhone");
+            Category smartPhoneCat = new Category("Smart Phone");
             deskCat.AssignParent(furnitureCat);
 
             Product cabinet = new Product("Dolap", 450, furnitureCat);
